@@ -1,10 +1,10 @@
 package day1
 
-import "github.com/clefever/aoc2017/utilities"
+import "github.com/clefever/aoc2017/utils"
 
 // PartOne generates the solution to part one of day 1 of AOC2017
 func PartOne(input string) (result int) {
-	nums := utilities.NumberStringToElements(input)
+	nums := utils.NumberStringToElements(input)
 	length := len(nums)
 	for i, val := range nums {
 		if i == length-1 {
@@ -22,7 +22,7 @@ func PartOne(input string) (result int) {
 
 // PartTwo generates the solution to part two of day 1 of AOC2017
 func PartTwo(input string) (result int) {
-	nums := utilities.NumberStringToElements(input)
+	nums := utils.NumberStringToElements(input)
 	length := len(nums)
 	for i, val := range nums {
 		if i < length/2 {

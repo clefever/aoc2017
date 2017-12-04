@@ -4,12 +4,12 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/clefever/aoc2017/utilities"
+	"github.com/clefever/aoc2017/utils"
 )
 
 // PartOne generates the solution to part one of day 4 of AOC2017
 func PartOne(input string) (result int) {
-	wordSlices := utilities.StringsByLineToSlice(input)
+	wordSlices := utils.StringsByLineToSlice(input)
 	for _, line := range wordSlices {
 		m := map[string]bool{}
 		for _, str := range line {
@@ -24,7 +24,7 @@ func PartOne(input string) (result int) {
 
 // PartTwo generates the solution to part two of day 4 of AOC2017
 func PartTwo(input string) (result int) {
-	wordSlices := utilities.StringsByLineToSlice(input)
+	wordSlices := utils.StringsByLineToSlice(input)
 	for _, line := range wordSlices {
 		m := map[string]bool{}
 		for _, str := range line {

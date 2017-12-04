@@ -1,6 +1,6 @@
 package day3
 
-import "github.com/clefever/aoc2017/utilities"
+import "github.com/clefever/aoc2017/utils"
 
 type cell struct {
 	X int
@@ -8,7 +8,7 @@ type cell struct {
 }
 
 func (c cell) getLength() int {
-	return utilities.Max(utilities.Abs(c.X), utilities.Abs(c.Y))
+	return utils.Max(utils.Abs(c.X), utils.Abs(c.Y))
 }
 
 // PartOne generates the solution to part one of day 3 of AOC2017
@@ -19,7 +19,7 @@ func PartOne(input int) (result int) {
 		currCell = getNextCell(currCell)
 		m[currCell] = i
 	}
-	return utilities.Abs(currCell.X) + utilities.Abs(currCell.Y)
+	return utils.Abs(currCell.X) + utils.Abs(currCell.Y)
 }
 
 // PartTwo generates the solution to part two of day 3 of AOC2017

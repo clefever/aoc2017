@@ -3,12 +3,12 @@ package day2
 import (
 	"math"
 
-	"github.com/clefever/aoc2017/utilities"
+	"github.com/clefever/aoc2017/utils"
 )
 
 // PartOne generates the solution to part one of day 2 of AOC2017
 func PartOne(input string) (result int) {
-	lines := utilities.NumbersByLineToSlice(input)
+	lines := utils.NumbersByLineToSlice(input)
 	for _, line := range lines {
 		max := math.MinInt32
 		min := math.MaxInt32
@@ -27,7 +27,7 @@ func PartOne(input string) (result int) {
 
 // PartTwo generates the solution to part two of day 2 of AOC2017
 func PartTwo(input string) (result int) {
-	lines := utilities.NumbersByLineToSlice(input)
+	lines := utils.NumbersByLineToSlice(input)
 	for _, line := range lines {
 		division := 0
 		for i, first := range line {
