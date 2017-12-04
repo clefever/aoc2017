@@ -1,8 +1,6 @@
 package day3
 
-import (
-	"github.com/clefever/aoc2017/utilities"
-)
+import "github.com/clefever/aoc2017/utilities"
 
 type cell struct {
 	X int

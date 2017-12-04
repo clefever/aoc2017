@@ -2,53 +2,44 @@ package day2
 
 import (
 	"math"
-	"strconv"
-	"strings"
+
+	"github.com/clefever/aoc2017/utilities"
 )
 
 // PartOne generates the solution to part one of day 2 of AOC2017
 func PartOne(input string) (result int) {
-	lines := strings.Split(input, "\n")
-	for _, l := range lines {
-		if l != "" {
-			max := math.MinInt32
-			min := math.MaxInt32
-			numbers := strings.Fields(l)
-			for _, n := range numbers {
-				number, _ := strconv.Atoi(n)
-				if number > max {
-					max = number
-				}
-				if number < min {
-					min = number
-				}
+	lines := utilities.NumbersByLineToSlice(input)
+	for _, line := range lines {
+		max := math.MinInt32
+		min := math.MaxInt32
+		for _, num := range line {
+			if num > max {
+				max = num
 			}
-			result += max - min
+			if num < min {
+				min = num
+			}
 		}
+		result += max - min
 	}
 	return result
 }
 
 // PartTwo generates the solution to part two of day 2 of AOC2017
 func PartTwo(input string) (result int) {
-	lines := strings.Split(input, "\n")
-	for _, r := range lines {
-		if r != "" {
-			division := 0
-			numbers := strings.Fields(r)
-			for i, first := range numbers {
-				f, _ := strconv.Atoi(first)
-				for _, second := range numbers[i+1:] {
-					s, _ := strconv.Atoi(second)
-					if f%s == 0 {
-						division = f / s
-					} else if s%f == 0 {
-						division = s / f
-					}
+	lines := utilities.NumbersByLineToSlice(input)
+	for _, line := range lines {
+		division := 0
+		for i, first := range line {
+			for _, second := range line[i+1:] {
+				if first%second == 0 {
+					division = first / second
+				} else if second%first == 0 {
+					division = second / first
 				}
 			}
-			result += division
 		}
+		result += division
 	}
 	return result
 }
