@@ -1,7 +1,7 @@
 package day3
 
 import (
-	"aoc2017/utilities"
+	"github.com/clefever/aoc2017/utilities"
 )
 
 type cell struct {

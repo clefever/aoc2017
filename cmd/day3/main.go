@@ -1,8 +1,9 @@
 package main
 
 import (
-	"aoc2017/day3"
 	"fmt"
+
+	"github.com/clefever/aoc2017/day3"
 )
 
 func main() {

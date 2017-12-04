@@ -1,10 +1,11 @@
 package main
 
 import (
-	"aoc2017/day2"
 	"fmt"
 	"io/ioutil"
 	"log"
+
+	"github.com/clefever/aoc2017/day2"
 )
 
 func main() {
