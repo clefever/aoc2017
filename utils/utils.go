@@ -29,7 +29,7 @@ func Max(x int, y int) int {
 	return y
 }
 
-// NumberStringToElements parses a string into a list of single character numbers
+// NumberStringToElements parses a string into a list of single character numbers.
 func NumberStringToElements(input string) (numbers []int) {
 	for _, s := range input {
 		num, _ := strconv.Atoi(string(s))
@@ -38,7 +38,7 @@ func NumberStringToElements(input string) (numbers []int) {
 	return numbers
 }
 
-// NumberListToSlice parses a single line string into a list of numbers
+// NumberListToSlice parses a single line string into a list of numbers.
 func NumberListToSlice(input string) (numbers []int) {
 	strs := strings.Fields(input)
 	for _, s := range strs {
@@ -50,7 +50,7 @@ func NumberListToSlice(input string) (numbers []int) {
 	return numbers
 }
 
-// StringListToSlice parses a single line string into a list of strings
+// StringListToSlice parses a single line string into a list of strings.
 func StringListToSlice(input string) (strs []string) {
 	fields := strings.Fields(input)
 	for _, f := range fields {
@@ -61,7 +61,7 @@ func StringListToSlice(input string) (strs []string) {
 	return strs
 }
 
-// NumbersByLineToSlice parses a string into a list of lines of numbers
+// NumbersByLineToSlice parses a string into a list of lines of numbers.
 func NumbersByLineToSlice(input string) (numbers [][]int) {
 	lines := strings.Split(input, "\n")
 	for _, line := range lines {
@@ -73,7 +73,7 @@ func NumbersByLineToSlice(input string) (numbers [][]int) {
 	return numbers
 }
 
-// StringsByLineToSlice parses a string into a list of lines of strings
+// StringsByLineToSlice parses a string into a list of lines of strings.
 func StringsByLineToSlice(input string) (strs [][]string) {
 	lines := strings.Split(input, "\n")
 	for _, line := range lines {
@@ -83,4 +83,23 @@ func StringsByLineToSlice(input string) (strs [][]string) {
 		}
 	}
 	return strs
+}
+
+// SlicesEqual determines whether slices are equal based on their elements.
+func SlicesEqual(a, b []int) bool {
+	if a == nil && b == nil {
+		return true
+	}
+	if a == nil || b == nil {
+		return false
+	}
+	if len(a) != len(b) {
+		return false
+	}
+	for i := range a {
+		if a[i] != b[i] {
+			return false
+		}
+	}
+	return true
 }
