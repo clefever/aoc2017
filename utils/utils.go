@@ -38,6 +38,14 @@ func NumberStringToElements(input string) (numbers []int) {
 	return numbers
 }
 
+// StringToElements parses a string into a list of single characters.
+func StringToElements(input string) (strings []string) {
+	for _, s := range input {
+		strings = append(strings, string(s))
+	}
+	return strings
+}
+
 // NumberListToSlice parses a single line string into a list of numbers.
 func NumberListToSlice(input string) (numbers []int) {
 	strs := strings.Fields(input)
